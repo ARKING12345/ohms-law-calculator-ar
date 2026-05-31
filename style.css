@@ -1,0 +1,153 @@
+/* Full Screen Lightning Background */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    /* This connects your exact purple lightning image name */
+    background: url('ohms-law-ar.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Centered Glassmorphism Calculator Card */
+.calculator-card {
+    background: rgba(15, 23, 42, 0.85); /* Semitransparent dark slate */
+    backdrop-filter: blur(10px); /* Premium background blur */
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(168, 85, 247, 0.4); /* Glowing purple border border */
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0 0 4px 0;
+    color: #c084fc; /* Neon Purple Header */
+    text-shadow: 0 0 10px rgba(192, 132, 252, 0.6);
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.field-label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    background: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: #f8fafc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #c084fc; /* Purple highlight focus */
+}
+
+/* Glowing Neon Calculation Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.5);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #7e22ce 0%, #6b21a8 100%);
+}
+
+/* Step-by-Step Breakdown Container */
+.solution-container {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid #475569;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#final-answer { color: #4ade80; font-weight: 700; }
+.steps-divider { height: 1px; background: #334155; margin-bottom: 12px; }
+.step-line { font-family: monospace; font-size: 14px; color: #cbd5e1; margin: 6px 0; padding-left: 8px; border-left: 2px solid #a855f7; }
+.active-step { border-left-color: #4ade80; color: #4ade80; font-weight: 600; }
+
+/* CODE-DRAWN ELECTRICAL CIRCUIT AREA */
+.diagram-section {
+    margin-top: 24px;
+    border-top: 1px dashed #475569;
+    padding-top: 15px;
+}
+
+.diagram-title {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 15px 0;
+}
+
+.circuit-canvas {
+    position: relative;
+    width: 220px;
+    height: 120px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px dashed #475569;
+    border-radius: 8px;
+}
+
+/* Wire Paths */
+.wire { position: absolute; background-color: #64748b; }
+.top-wire { top: 20px; left: 30px; width: 160px; height: 2px; }
+.bottom-wire { bottom: 20px; left: 30px; width: 160px; height: 2px; }
+.left-wire { top: 20px; left: 30px; width: 2px; height: 80px; }
+.right-wire { top: 20px; right: 30px; width: 2px; height: 80px; }
+
+/* Battery Element Map Symbol */
+.battery { position: absolute; left: 21px; top: 50px; width: 20px; height: 20px; }
+.battery-line-long { width: 20px; height: 2px; background: #c084fc; margin-bottom: 6px; box-shadow: 0 0 8px #c084fc; }
+.battery-line-short { width: 10px; height: 2px; background: #c084fc; margin-left: 5px; box-shadow: 0 0 8px #c084fc; }
+.label-v { position: absolute; left: -18px; top: 0; color: #c084fc; font-weight: bold; font-size: 13px;}
+
+/* Resistor Node Map Symbol */
+.resistor { position: absolute; right: 17px; top: 45px; width: 28px; height: 30px; background: #1e293b; border: 2px solid #f43f5e; border-radius: 4px; box-shadow: 0 0 8px rgba(244, 63, 94, 0.4); }
+.resistor-zig { width: 100%; height: 100%; background: linear-gradient(45deg, transparent 45%, #f43f5e 49%, #f43f5e 51%, transparent 55%), linear-gradient(-45deg, transparent 45%, #f43f5e 49%, #f43f5e 51%, transparent 55%); background-size: 10px 10px; }
+.label-r { position: absolute; right: -18px; top: 5px; color: #f43f5e; font-weight: bold; font-size: 13px;}
+
+/* Animated Electron Stream Arrow */
+.current-arrow { position: absolute; top: 11px; left: 95px; color: #4ade80; font-size: 14px; animation: flow 2s infinite linear; }
+.label-i { font-weight: bold; color: #4ade80; font-size: 12px; margin-left: 2px; }
+
+@keyframes flow {
+    0% { transform: translateX(-15px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(15px); opacity: 0; }
+}
