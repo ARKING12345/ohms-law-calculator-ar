@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohm's Law Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-card">
+        <h1>Ohm's Law Solver</h1>
+        <p class="subtitle">Interactive Engineering Tool</p>
+
+        <!-- Dropdown Selection -->
+        <label for="choice" class="field-label">What do you want to find?</label>
+        <select id="choice" onchange="updateInputs()">
+            <option value="voltage">Voltage (V)</option>
+            <option value="current">Current (I)</option>
+            <option value="resistance">Resistance (R)</option>
+        </select>
+
+        <!-- Dynamic Input Boxes -->
+        <div id="input-container">
+            <!-- Handled by JavaScript -->
+        </div>
+
+        <button onclick="calculate()">Calculate Solution</button>
+
+        <!-- Dynamic Output Solution -->
+        <div id="solution-box" class="solution-container" style="display:none;">
+            <h2>Answer: <span id="final-answer"></span></h2>
+            <div class="steps-divider"></div>
+            <h3>Step-by-Step Breakdown:</h3>
+            <div id="step-formula" class="step-line"></div>
+            <div id="step-substitution" class="step-line"></div>
+            <div id="step-math" class="step-line active-step"></div>
+        </div>
+
+        <!-- Coded Circuit Diagram Section -->
+        <div class="diagram-section">
+            <p class="diagram-title">Live Schematic Circuit</p>
+            <div class="circuit-canvas">
+                <div class="wire top-wire"></div>
+                <div class="wire right-wire"></div>
+                <div class="wire bottom-wire"></div>
+                <div class="wire left-wire"></div>
+                
+                <div class="component battery">
+                    <div class="battery-line-long"></div>
+                    <div class="battery-line-short"></div>
+                    <span class="label-v">V</span>
+                </div>
+                
+                <div class="component resistor">
+                    <div class="resistor-zig"></div>
+                    <span class="label-r">R</span>
+                </div>
+                
+                <div class="current-arrow">➔ <span class="label-i">I</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
